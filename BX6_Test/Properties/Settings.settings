@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BX6_Test.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MaterialsSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:</Value>
+    </Setting>
+    <Setting Name="SampleSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:</Value>
+    </Setting>
+    <Setting Name="TestResultPathSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:</Value>
+    </Setting>
+    <Setting Name="PasswordSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123456</Value>
+    </Setting>
+    <Setting Name="HardwareSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">V1.0</Value>
+    </Setting>
+    <Setting Name="SoftwareSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">V11.05.03</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

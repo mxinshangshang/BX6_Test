@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CC8EACE3-E53A-42A6-B8E8-E46372800666}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BX6_Test</RootNamespace>
+    <AssemblyName>BX6_Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>BX6_Test.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoReport.Designer.cs">
+      <DependentUpon>AutoReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSVersion.Designer.cs">
+      <DependentUpon>HSVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manu.Designer.cs">
+      <DependentUpon>Manu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoR.Designer.cs">
+      <DependentUpon>AutoR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManuW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManuW.Designer.cs">
+      <DependentUpon>ManuW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManuF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManuF.Designer.cs">
+      <DependentUpon>ManuF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManuR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManuR.Designer.cs">
+      <DependentUpon>ManuR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoW.Designer.cs">
+      <DependentUpon>AutoW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoF.Designer.cs">
+      <DependentUpon>AutoF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageShow.Designer.cs">
+      <DependentUpon>MessageShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password.Designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Passwordlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Passwordlogin.Designer.cs">
+      <DependentUpon>Passwordlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowResult.Designer.cs">
+      <DependentUpon>ShowResult.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AutoReport.resx">
+      <DependentUpon>AutoReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSVersion.resx">
+      <DependentUpon>HSVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manu.resx">
+      <DependentUpon>Manu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoR.resx">
+      <DependentUpon>AutoR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManuW.resx">
+      <DependentUpon>ManuW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManuF.resx">
+      <DependentUpon>ManuF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManuR.resx">
+      <DependentUpon>ManuR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoW.resx">
+      <DependentUpon>AutoW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoF.resx">
+      <DependentUpon>AutoF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageShow.resx">
+      <DependentUpon>MessageShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Passwordlogin.resx">
+      <DependentUpon>Passwordlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ShowResult.resx">
+      <DependentUpon>ShowResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\关着的门.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\开着门.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BX6_Test.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
