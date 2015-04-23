@@ -1335,6 +1335,7 @@ namespace BX6_Test
             message1 = System.Text.Encoding.ASCII.GetBytes(b);
             serialPort1.Write(message1, 0, b.Length);
             button8.ForeColor = Color.Black;
+            encoder = true;
             Thread.Sleep(500);
             encoder = true;
             Thread.Sleep(500);
@@ -1359,6 +1360,7 @@ namespace BX6_Test
             message1 = System.Text.Encoding.ASCII.GetBytes(b);
             serialPort1.Write(message1, 0, b.Length);
             button9.ForeColor = Color.LightSeaGreen;
+            encoder = true;
             Thread.Sleep(500);
             encoder = true;
             Thread.Sleep(500);
@@ -1406,6 +1408,7 @@ namespace BX6_Test
             message1 = System.Text.Encoding.ASCII.GetBytes(b);
             serialPort1.Write(message1, 0, b.Length);
             button16.Invoke(show16);
+            encoder = true;
             Thread.Sleep(500);
             encoder = true;
             Thread.Sleep(500);
@@ -1433,6 +1436,7 @@ namespace BX6_Test
                 b = GetLRC(a);
                 message1 = System.Text.Encoding.ASCII.GetBytes(b);
                 serialPort1.Write(message1, 0, b.Length);
+                encoder = true;
                 Thread.Sleep(500);
                 encoder = true;
                 Thread.Sleep(500);
@@ -1506,7 +1510,7 @@ namespace BX6_Test
             Third = true;
 
 
-            Thread.Sleep(20000);
+            Thread.Sleep(32000);
             firstplace = trackbarValue;
             Thread.Sleep(2500);
             secondplace = trackbarValue;
@@ -1529,7 +1533,7 @@ namespace BX6_Test
                 Thread.Sleep(12000);
             }
  
-            Thread.Sleep(22000);
+            Thread.Sleep(10000);
             if (trackbarValue > 84000)
             {
                 Third = false;
