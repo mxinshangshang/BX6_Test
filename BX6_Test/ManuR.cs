@@ -356,9 +356,13 @@ namespace BX6_Test
                 button17.Invoke(moving_l, l = l - 2);
                 button18.Invoke(moving_r, r = r + 2);
                 Thread.Sleep(100);
-                if (l == 903) break;
+                if (l == 903) 
+                {
+                    Thread.CurrentThread.Abort();
+                }
             }
-            Thread.CurrentThread.Abort();
+            //Thread.CurrentThread.Abort();
+            //Thread.CurrentThread.Abort();
         }
         private void CloseTheDoor()
         {
@@ -371,9 +375,13 @@ namespace BX6_Test
                 button17.Invoke(moving_l, l = l + 2);
                 button18.Invoke(moving_r, r = r - 2);
                 Thread.Sleep(100);
-                if (l == 948) break;
+                if (l == 948)
+                {
+                    Thread.CurrentThread.Abort();
+                }
             }
-            Thread.CurrentThread.Abort();
+            //Thread.CurrentThread.Abort();
+            //Thread.CurrentThread.Abort();
         }
 
         #endregion

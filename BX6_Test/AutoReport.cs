@@ -100,6 +100,12 @@ namespace BX6_Test
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string a = ": 01 05 09 14 00 00";                                          //PowerOff
+            string b = GetLRC(a);
+            byte[] message1 = System.Text.Encoding.ASCII.GetBytes(b);
+            serialPort1.Write(message1, 0, b.Length);
+            serialPort1.Close();
+            form1.closeit = false;
             this.Close();
         }
     }

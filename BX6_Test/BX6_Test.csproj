@@ -59,6 +59,12 @@
     <Compile Include="HSVersion.Designer.cs">
       <DependentUpon>HSVersion.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadingMMC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingMMC.Designer.cs">
+      <DependentUpon>LoadingMMC.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HSVersion.resx">
       <DependentUpon>HSVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingMMC.resx">
+      <DependentUpon>LoadingMMC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

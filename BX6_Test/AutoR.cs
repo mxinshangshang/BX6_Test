@@ -354,6 +354,31 @@ namespace BX6_Test
                 this.Close();
                 //Thread.CurrentThread.Abort();
             }
+            else
+            {
+                try
+                {
+                    T.Abort();
+                    RE.Abort();
+                    CheckRun.Abort();
+                    Door.Abort();
+                }
+                catch { }
+                R.Abort();
+                NEXT = true;
+                HWversion = "";
+                SWversion = "";
+                serialPort1.PortName = PLCCom;
+                serialPort1.BaudRate = 9600;
+                serialPort1.DataBits = 7;
+                serialPort1.StopBits = StopBits.One;
+                serialPort1.Parity = Parity.Even;
+                if (serialPort1.IsOpen == true)
+                {
+                    serialPort1.Close();
+                }
+                serialPort1.Open();
+            }
         }
         #endregion
 
@@ -379,10 +404,13 @@ namespace BX6_Test
                 button17.Invoke(moving_l, l=l-2);
                 button18.Invoke(moving_r, r=r+2);
                 Thread.Sleep(100);
-                if (l == 903) break;
+                if (l == 903) 
+                {
+                    Thread.CurrentThread.Abort();
+                }
             }
-            Thread.CurrentThread.Abort();
-            Thread.CurrentThread.Abort();
+            //Thread.CurrentThread.Abort();
+            //Thread.CurrentThread.Abort();
         }
         private void CloseTheDoor()
         {
@@ -395,10 +423,13 @@ namespace BX6_Test
                 button17.Invoke(moving_l, l=l+2);
                 button18.Invoke(moving_r, r=r-2);
                 Thread.Sleep(100);
-                if (l == 948) break;
+                if (l == 948)
+                {
+                    Thread.CurrentThread.Abort();
+                }
             }
-            Thread.CurrentThread.Abort();
-            Thread.CurrentThread.Abort();
+            //Thread.CurrentThread.Abort();
+            //Thread.CurrentThread.Abort();
         }
 
         #endregion
@@ -1109,18 +1140,16 @@ namespace BX6_Test
         {
             SetTextCallback settextbox = new SetTextCallback(SetText);
 
-            if (PLCPrm[7] == 1)
-            {
-                MessageShow messageshow = new MessageShow("请确认控制柜内所有的断路器在断开状态, ECB印板没有任何插件" + "\n\n" + "然后" + "\n" + "(1)请插上短接端子： XPSU_B、 XSPH、 XKNE、 XKBV、 XKTHMH、 XJH、 XTHMR" + "\n\n" + "(2)请插上从控制柜元器件来的端子： XMAIN、 XRKPH、 XPSU_E、 X24PS、 XJTHS" + "\n\n" + "(3)请插上测试设备红色线束的端子： XESE、 XVF、 XTC1、 XTC2、 XISPT、 XKV、 XCAN_EXT、RS232串口线" + "\n\n" + "(4)请接 JTHS 夹具" + "\n\n" + "(5)请把 JTHS 闭合");
-                messageshow.ShowDialog();
-            }
-            if (PLCPrm[8] == 1)
-            {
-                MessageShow messageshow = new MessageShow("请确认控制柜内所有的断路器在断开状态, ECB印板没有任何插件" + "\n\n" + "然后" + "\n" + "(1)请插上短接端子： XPSU_B、 XSPH、 XKNE、 XKBV、 XKTHMH、 XJH、 XTHMR、 XCTB、 XCTD" + "\n\n" + "(2)请插上从控制柜元器件来的端子： XMAIN、 XRKPH、 XPSU_E、 X24PS、 XJTHS、 XCT" + "\n\n" + "(3)请插上测试设备红色线束的端子： XESE、 XVF、 XTC1、 XTC2、 XISPT、 XKV、 XCAN_EXT、RS232串口线" + "\n\n" + "(4)请接 X1 夹具" + "\n\n" + "(5)请把 JTHS 闭合");
-                messageshow.ShowDialog();
-            }
-            //MessageShow messageshow = new MessageShow("请确认控制柜内所有的断路器在断开状态, ECB印板没有任何插件" + "\n\n" + "然后" + "\n" + "(1)请插上短接端子： XPSU_B、 XSPH、 XKNE、 XKBV、 XKTHMH、 XJH、 XTHMR、 XCTB、 XCTD" + "\n\n" + "(2)请插上从控制柜元器件来的端子： XMAIN、 XRKPH、 XPSU_E、 X24PS、 XJTHS、 XCT" + "\n\n" + "(3)请插上测试设备红色线束的端子： XESE、 XVF、 XTC1、 XTC2、 XISPT、 XKV、 XCAN_EXT、RS232串口线" + "\n\n" + "(4)如果使用 57814139 请接 X1 夹具" + "\n" + "    如果使用 57814138 请接 JTHS 夹具" + "\n\n" + "(5)请把 JTHS 闭合");
-            //messageshow.ShowDialog();
+            //if (PLCPrm[7] == 1)
+            //{
+            //    MessageShow messageshow = new MessageShow("请确认控制柜内所有的断路器在断开状态, ECB印板没有任何插件" + "\n\n" + "然后" + "\n" + "(1)请插上短接端子： XPSU_B、 XSPH、 XKNE、 XKBV、 XKTHMH、 XJH、 XTHMR" + "\n\n" + "(2)请插上从控制柜元器件来的端子： XMAIN、 XRKPH、 XPSU_E、 X24PS、 XJTHS" + "\n\n" + "(3)请插上测试设备红色线束的端子： XESE、 XVF、 XTC1、 XTC2、 XISPT、 XKV、 XCAN_EXT、RS232串口线" + "\n\n" + "(4)请接 JTHS 夹具" + "\n\n" + "(5)请把 JTHS 闭合");
+            //    messageshow.ShowDialog();
+            //}
+            //if (PLCPrm[8] == 1)
+            //{
+            //    MessageShow messageshow = new MessageShow("请确认控制柜内所有的断路器在断开状态, ECB印板没有任何插件" + "\n\n" + "然后" + "\n" + "(1)请插上短接端子： XPSU_B、 XSPH、 XKNE、 XKBV、 XKTHMH、 XJH、 XTHMR、 XCTB、 XCTD" + "\n\n" + "(2)请插上从控制柜元器件来的端子： XMAIN、 XRKPH、 XPSU_E、 X24PS、 XJTHS、 XCT" + "\n\n" + "(3)请插上测试设备红色线束的端子： XESE、 XVF、 XTC1、 XTC2、 XISPT、 XKV、 XCAN_EXT、RS232串口线" + "\n\n" + "(4)请接 X1 夹具" + "\n\n" + "(5)请把 JTHS 闭合");
+            //    messageshow.ShowDialog();
+            //}
             
             int firstplace = 0;
             int secondplace = 0;
@@ -1130,8 +1159,8 @@ namespace BX6_Test
             SHOWbutton7 show7 = new SHOWbutton7(ShowButton7);
 
 
-            groupBox2.Visible = false;                                                  //PowerOn
-            groupBox3.Visible = false;
+            //groupBox2.Visible = false;                                                  //PowerOn
+            //groupBox3.Visible = false;
             button1.BackColor = Color.LightSeaGreen;
 
             string a = ": 01 05 08 13 FF 00";
@@ -1211,6 +1240,8 @@ namespace BX6_Test
             encoder = true;
             Thread.Sleep(500);
             encoder = true;
+            Thread.Sleep(500);
+            encoder = true;
 
             CheckRun = new Thread(RightOrWrong);
             CheckRun.IsBackground = true;
@@ -1256,6 +1287,9 @@ namespace BX6_Test
             serialPort1.Write(message1, 0, b.Length);
             button7.Invoke(show7);
             //button7.Visible = true;
+            encoder = true;
+            Thread.Sleep(500);
+            encoder = true;
             Thread.Sleep(500);
             encoder = true;
 
@@ -1280,6 +1314,8 @@ namespace BX6_Test
             button8.ForeColor = Color.LightSeaGreen;
             Thread.Sleep(500);
             encoder = true;
+            Thread.Sleep(500);
+            encoder = true;
 
             Thread.Sleep(1500);
             runup = true;
@@ -1299,6 +1335,8 @@ namespace BX6_Test
             message1 = System.Text.Encoding.ASCII.GetBytes(b);
             serialPort1.Write(message1, 0, b.Length);
             button8.ForeColor = Color.Black;
+            Thread.Sleep(500);
+            encoder = true;
             Thread.Sleep(500);
             encoder = true;
             runup = false;
@@ -1323,11 +1361,14 @@ namespace BX6_Test
             button9.ForeColor = Color.LightSeaGreen;
             Thread.Sleep(500);
             encoder = true;
+            Thread.Sleep(500);
+            encoder = true;
+            stoprun = false;
 
             Thread.Sleep(1500);
             runup = false;
             rundown = true;
-            stoprun = false;
+            //stoprun = false;
             goground = false;
 
 
@@ -1394,6 +1435,8 @@ namespace BX6_Test
                 serialPort1.Write(message1, 0, b.Length);
                 Thread.Sleep(500);
                 encoder = true;
+                Thread.Sleep(500);
+                encoder = true;
                 Thread.Sleep(15000);
             }
 
@@ -1452,6 +1495,7 @@ namespace BX6_Test
             serialPort1.Write(message1, 0, b.Length);
             button10.ForeColor = Color.LightSeaGreen;
             floor3 = true;
+            encoder = true;
             Thread.Sleep(500);
             encoder = true;
             Thread.Sleep(500);
@@ -1477,6 +1521,7 @@ namespace BX6_Test
                 serialPort1.Write(message1, 0, b.Length);
                 //button10.ForeColor = Color.LightSeaGreen;
                 floor3 = true;
+                encoder = true;
                 Thread.Sleep(500);
                 encoder = true;
                 Thread.Sleep(500);
@@ -1520,6 +1565,7 @@ namespace BX6_Test
             serialPort1.Write(message1, 0, b.Length);
             button12.ForeColor = Color.LightSeaGreen;
             floor1 = true;
+            encoder = true;
             Thread.Sleep(500);
             encoder = true;
             Thread.Sleep(500);
@@ -1647,6 +1693,10 @@ namespace BX6_Test
             button6.BackColor = Color.FromKnownColor(KnownColor.Control);
             button20.BackColor = Color.FromKnownColor(KnownColor.Control);
             button5.BackColor = Color.FromKnownColor(KnownColor.Control);
+
+            groupBox2.Visible = false;                                                 
+            groupBox3.Visible = false;
+
             SetTextCallback settextbox = new SetTextCallback(SetText);
             textBox1.Invoke(settextbox, "—————————————————————");       
             R = new Thread(Running);
@@ -1664,22 +1714,29 @@ namespace BX6_Test
             }
             catch { }
             R.Abort();
+            HWversion = "";
+            SWversion = "";
+            string a = ": 01 05 09 14 00 00";                                          //PowerOff
+            string b = GetLRC(a);
+            byte[] message1 = System.Text.Encoding.ASCII.GetBytes(b);
+            serialPort1.Write(message1, 0, b.Length);
+            //serialPort1.Close();
             this.button19.Enabled = true;
             this.Refresh();
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            opening = new Thread(OpenTheDoor);
-            opening.IsBackground = true;
-            opening.Start();
+            //opening = new Thread(OpenTheDoor);
+            //opening.IsBackground = true;
+            //opening.Start();
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            closeing = new Thread(CloseTheDoor);
-            closeing.IsBackground = true;
-            closeing.Start();
+            //closeing = new Thread(CloseTheDoor);
+            //closeing.IsBackground = true;
+            //closeing.Start();
         }
 
         private void button15_Click(object sender, EventArgs e)

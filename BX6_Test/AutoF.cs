@@ -54,8 +54,8 @@ namespace BX6_Test
             this.file = file;
             this.PLCCom = PLCCom;
             this.TELECom = TELECom;
-            this.PLCPrm1 = PLCPrm1;
-            this.PLCPrm2 = PLCPrm2;
+            this.PLCPrm1 = PLCPrm1;//功能测试项
+            this.PLCPrm2 = PLCPrm2;//连线测试项
             this.Contract = contract;
             this.JobNum = jobnum;
             this.PLCPrm = PLCPrm;
@@ -172,9 +172,10 @@ namespace BX6_Test
             {
                 serialPort1.Close();
                 label7.ForeColor = Color.Green;
-                label7.Text = "功能测试 PASS"; 
-                Form AutoRun = new AutoR(file, PLCCom, PLCPrm2,Contract,JobNum,PLCPrm,TELECom);
-                AutoRun.Show();                
+                label7.Text = "功能测试 PASS";
+                this.Hide();
+                Form LoadingMMC = new LoadingMMC(file, PLCCom, PLCPrm2,Contract,JobNum,PLCPrm,TELECom);
+                LoadingMMC.Show();                
                 this.Close();
             }
             else
