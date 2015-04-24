@@ -501,7 +501,7 @@ namespace BX6_Test
                     {
 
                     }
-                    if (!encoder) break;
+                    //if (!encoder) break;
                     Thread.Sleep(500);
                 }
             }
@@ -1444,11 +1444,12 @@ namespace BX6_Test
                 Thread.Sleep(15000);
             }
 
+            encoder = true;
             runup = false;
             rundown = false;
             stoprun = false;
             goground = true;
-
+            encoder = true;
 
             Thread.Sleep(23000);
 

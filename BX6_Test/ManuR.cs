@@ -423,7 +423,7 @@ namespace BX6_Test
                     {
 
                     }
-                    if (!encoder) break;
+                    //if (!encoder) break;
                     Thread.Sleep(500);
                 }
             }
